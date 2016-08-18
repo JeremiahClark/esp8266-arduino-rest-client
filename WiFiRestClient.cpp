@@ -113,7 +113,7 @@ int WiFiRestClient::request(const char* method, const char* path,
     write("Connection: close\r\n");
 
     if(body != NULL){
-      char contentLength[30];
+      char contentLength[255];
       sprintf(contentLength, "Content-Length: %d\r\n", strlen(body));
       write(contentLength);
 
